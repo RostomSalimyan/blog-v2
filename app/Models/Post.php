@@ -18,12 +18,12 @@ class Post extends Model
 
     protected $fillable = ['title', 'content', 'date', 'description'];
 
-    public function category() // $post->category->title - получим категорию поста (его title)
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function author() // $post->author - достанем пользователя, которому принадлежит пост
+    public function author() 
     {
         return $this->belongsTo(User::class,'user_id');
     }
